@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>D3-Celestial Presets</title>
+  <script type="text/javascript" src="../lib/d3.min.js"></script>
+  <script type="text/javascript" src="../lib/d3.geo.projection.min.js"></script>
+  <script type="text/javascript" src="../celestial.js"></script>
+  <link rel="stylesheet" href="../celestial001.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Zeyada&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Waterfall&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Sacramento&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"> 
+  </script>  <style>
+    #map {
+      height: 300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="celestial-poster">
+      <div class="poster-frame">
+        <div class="poster-background"></div>
+        <div id="celestial-map"></div>
+        <div id="celestial-info">
+          <div id="customtext"></div>
+          <div id="name"></div>
+          <div id="location-name">
+            New York, USA
+          </div>
+          <div id="date">
+            <p>March 21, 2023</p>
+          </div>
+          <div id="location-coords"> </div>
+
+        </div>
+      </div>
+      </div>
+
+
+    <div class ='sidebar'>
+  <form id="form">
+    <div id="map"></div>
+
+  
+  <div class="location-input-container">
+    <h4>Location</h4>
+    <input type="text" id="location-input" placeholder="Enter a location">
+    <div class="location-suggestions-container">
+      <ul id="location-suggestions"></ul>
+    </div>
+  </div>
+
+  <h4>Date</h4>
+  <input type="date" id="date-input">
+
+  <h4>Custom-text</h4>
+  <input type="text" id="custom-name" placeholder="Enter names. i.e. Mary&Jerry">
+  <input type="text" id="custom-text" placeholder="Enter custom text">
+  <h4> Select a font:</h4>
+  <select id="input-font" class="input" onchange="changeFontStyle(this);">
+    <option value="Zeyada" selected="selected">Zeyada</option> 
+    <option value="Sacramento">Sacramento    </option> 
+    <option value="fantasy">Fantasy</option> 
+    <option value="cursive">cursive</option> 
+    <option value="Mrs Saint Delafield">Mrs Saint Delafield</option> 
+    <option value="Waterfall">Waterfall</option> 
+
+
+  </select>
+  <h4>Select a font size:</h4>
+<select id="input-font-size" class="input" onchange ="changeFontStyle(this);">
+  <option value="12px">12px</option>
+  <option value="16px" selected="selected">16px</option>
+  <option value="20px">20px</option>
+  <option value="24px">24px</option>
+  <option value="28px">28px</option>
+  <option value="32px">32px</option>
+  <option value="36px">36px</option>
+  <option value="38px">38px</option>
+  <option value="40px">40px</option>
+  <option value="42px">42px</option>
+  <option value="44px">44px</option>
+  <option value="46px">46px</option>
+  <option value="48px">48px</option>
+  <option value="50px">50px</option>
+  <option value="52px">52px</option>
+
+</select>
+
+  <div class="color-picker">
+  <h4>
+    <label for="background-color-picker">Map Color:</label>
+    <input type="color" id="background-color-picker" value="#0b1a26">
+  </h4>
+  </div>
+  <div class="color-picker">
+
+  <h4>
+    <label for="background-color-picker">Poster Background Color:</label>
+<input type="color" id="poster-background-color-picker" value="#000000">
+</h4>
+  </div>
+  <div class="color-picker">
+<h4>
+  <label for="background-color-picker">Font Color:</label>
+  <input type="color" id="font-color-picker" value="#0b1a26">
+</h4>
+</div>
+
+<h3>Options</h3>
+<div class = 'option'>
+  <label class="toggle" for="constellation-lines-toggle">
+    <input class="toggle-checkbox" type="checkbox" id="constellation-lines-toggle" checked>
+    <div class="toggle-switch"></div>
+    <span class="toggle-label">Constellation Lines</span>
+  </label>
+
+  <label class="toggle" for="milky-way-toggle">
+    <input class="toggle-checkbox" type="checkbox" id="milky-way-toggle" checked>
+    <div class="toggle-switch"></div>
+    <span class="toggle-label">Milky Way</span>
+  </label>
+</div>
+  
+  <div class="button-25">
+    <button type="button" 
+     onclick="saveAsImage()">Download
+    </button>
+</div></form>
+</div>
+</div>
+
+
+
+<script src="script.js" type="text/javascript"></script>
+
+
+  <footer id="d3-celestial-footer">
+  </footer>
+</body>
+</html>
