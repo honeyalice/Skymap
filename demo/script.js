@@ -197,7 +197,7 @@ function changeFontStyle(selectElement) {
 
   function saveAsImage() {
     const findEl = document.getElementById('celestial-poster');
-    const scale = 8; // Set the scale factor to 2 to double the resolution
+    const scale = 12; // Set the scale factor to 2 to double the resolution
   
     html2canvas(findEl, {
       scale: scale, // Use the scale factor in the html2canvas options
