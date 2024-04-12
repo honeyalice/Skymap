@@ -78,9 +78,9 @@
   <h4>Select a font size:</h4>
 <select id="input-font-size" class="input" onchange ="changeFontStyle(this);">
   <option value="12px">12px</option>
-  <option value="16px" selected="selected">16px</option>
+  <option value="16px" >16px</option>
   <option value="20px">20px</option>
-  <option value="24px">24px</option>
+  <option value="24px" selected="selected">24px</option>
   <option value="28px">28px</option>
   <option value="32px">32px</option>
   <option value="36px">36px</option>
@@ -94,18 +94,19 @@
   <option value="52px">52px</option>
 
 </select>
-
+<div class="color-select">
   <div class="color-picker">
   <h4>
     <label for="background-color-picker">Map Color:</label>
     <input type="color" id="background-color-picker" value="#0b1a26">
   </h4>
   </div>
+
   <div class="color-picker">
 
   <h4>
     <label for="background-color-picker">Poster Background Color:</label>
-<input type="color" id="poster-background-color-picker" value="#000000">
+<input type="color" id="poster-background-color-picker" value="#ffffff">
 </h4>
   </div>
   <div class="color-picker">
@@ -113,6 +114,13 @@
   <label for="background-color-picker">Font Color:</label>
   <input type="color" id="font-color-picker" value="#0b1a26">
 </h4>
+</div>
+<div class="color-picker">
+<h4>
+  <label for="background-color-picker">Frame Color:</label>
+  <input type="color" id="frame-color-picker" value="#ffffff">
+</h4>
+</div>
 </div>
 
 <h3>Options</h3>
@@ -127,6 +135,11 @@
     <input class="toggle-checkbox" type="checkbox" id="milky-way-toggle" checked>
     <div class="toggle-switch"></div>
     <span class="toggle-label">Milky Way</span>
+  </label>
+  <label class="toggle" for="frame-toggle">
+    <input class="toggle-checkbox" type="checkbox" id="frame-toggle" checked>
+    <div class="toggle-switch"></div>
+    <span class="toggle-label">Frame</span>
   </label>
 </div>
   

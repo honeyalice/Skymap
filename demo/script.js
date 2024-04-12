@@ -152,11 +152,25 @@ config.constellations.lines = showConstellationLines;
 Celestial.apply(config);
 });
 
+document.getElementById("frame-toggle").addEventListener("change", function() {
+  var showFrame = this.checked;
+  var posterBackground = document.querySelector(".poster-background");
+
+  if (showFrame) {
+    posterBackground.style.border = "2px solid #fff";
+  } else {
+    posterBackground.style.border = "none";
+  }
+  Celestial.apply(config);
+  });
+
 document.getElementById("background-color-picker").addEventListener("input", function() {
 var backgroundColor = this.value;
 config.background.fill = backgroundColor;
 Celestial.apply(config);
 });
+
+
 
 
 // Function to update poster background color
@@ -178,6 +192,14 @@ function updatePosterBackgroundColor() {
   // Attach event listeners to the color inputs
   document.getElementById("font-color-picker").addEventListener("input", updatePosterFontColor);
   
+
+  function updatePosterFrameColor() {
+    var backgroundColor = document.getElementById("frame-color-picker").value;
+    document.querySelector(".poster-background").style.borderColor = backgroundColor;
+
+  }
+  // Attach event listeners to the color inputs
+  document.getElementById("frame-color-picker").addEventListener("input", updatePosterFrameColor);
 
 document.getElementById("milky-way-toggle").addEventListener("change", function() {
 var showMilkyWay = this.checked;
