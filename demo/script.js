@@ -16,9 +16,9 @@ var config = {
     },
     background: {
       fill: 'black',
-      stroke: "#ffffff",
+      stroke: "#fff",
       opacity: 1,
-      width: 1,
+      width: 2,
     },
     constellations: {
       show: false,
@@ -34,10 +34,10 @@ var config = {
     },
     stars: {
       show: true,
-      limit: 5,
+      limit: 6,
       names: false,
       colors: false,
-      style: { fill: "#ffffff", opacity: 1 },
+      style: { fill: "#ffffff", opacity: 0.9 },
       designation: false,
       propername: false,
       size: 2,
@@ -215,6 +215,19 @@ function changeFontStyle(selectElement) {
     document.getElementById("customtext").style.fontSize = selectedFontSize;
 
   }
+
+  // Get a reference to the star size dropdown
+const starSizeSelect = document.getElementById('star-size-select');
+
+// Function to update the star size
+function updateStarSize() {
+  const selectedSize = starSizeSelect.value;
+  config.stars.size = parseFloat(selectedSize);
+  Celestial.apply(config);
+}
+
+// Add an event listener to the star size dropdown
+starSizeSelect.addEventListener('change', updateStarSize);
   
 
   function saveAsImage() {
