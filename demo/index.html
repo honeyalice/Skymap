@@ -121,6 +121,12 @@
   <input type="color" id="frame-color-picker" value="#ffffff">
 </h4>
 </div>
+<div class="color-picker">
+  <h4>
+    <label for="background-color-picker">Outline Color:</label>
+    <input type="color" id="outline-color-picker" value="#ffffff">
+  </h4>
+  </div>
 </div>
 <div class="star-size">
   <h4>Star Size</h4>
@@ -129,6 +135,24 @@
     <option value="4" selected>Medium</option>
     <option value="6">Large</option>
   </select>
+</div>
+<div>
+  <h4>Constellation Line Style</h4>
+  <label for="constellation-line-color">Color:</label>
+  <input type="color" id="constellation-line-color" value="#cccccc">
+  <label for="constellation-line-width">Width:</label>
+  <input type="number" id="constellation-line-width" min="0.1" max="5" step="0.1" value="0.5">
+</div>
+<div>
+  <h4>Star Map Outline</h4>
+  <label for="outline-color">Outline Color:</label>
+  <input type="color" id="outline-color" value="#ffffff">
+</div>
+
+<div>
+  <h4>Star Limit</h4>
+  <label for="star-limit">Limit:</label>
+  <input type="number" id="star-limit" min="1" max="10" value="5">
 </div>
 
 <h3>Options</h3>

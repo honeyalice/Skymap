@@ -3,7 +3,7 @@ var config = {
     interactive: false,
     controls: false,
     projection: "airy",
-    datapath: "../data/",
+    datapath: "./data/",
     lines: {
       graticule: { show: false },
       equatorial: { show: false },
@@ -170,7 +170,19 @@ config.background.fill = backgroundColor;
 Celestial.apply(config);
 });
 
+// Get a reference to the new input field
+const backgroundStrokeColorInput = document.getElementById('outline-color');
 
+// Function to update background stroke color
+function updateBackgroundStrokeColor() {
+  const newStrokeColor = backgroundStrokeColorInput.value;
+  config.background.stroke = newStrokeColor;
+  Celestial.apply(config);
+}
+
+// Add event listener
+backgroundStrokeColorInput.addEventListener('input', updateBackgroundStrokeColor);
+  
 
 
 // Function to update poster background color
@@ -228,7 +240,32 @@ function updateStarSize() {
 
 // Add an event listener to the star size dropdown
 starSizeSelect.addEventListener('change', updateStarSize);
+
+
   
+
+
+// Get references to the new input fields
+const constellationLineColorInput = document.getElementById('constellation-line-color');
+const constellationLineWidthInput = document.getElementById('constellation-line-width');
+
+// Function to update constellation line style
+function updateConstellationLineStyle() {
+  const newColor = constellationLineColorInput.value;
+  const newWidth = parseFloat(constellationLineWidthInput.value);
+
+  config.constellations.lineStyle = {
+    stroke: newColor,
+    width: newWidth,
+    opacity: 0.6 // You can adjust the opacity if needed
+  };
+
+  Celestial.apply(config);
+}
+
+// Add event listeners
+constellationLineColorInput.addEventListener('input', updateConstellationLineStyle);
+constellationLineWidthInput.addEventListener('input', updateConstellationLineStyle);
 
   function saveAsImage() {
     const findEl = document.getElementById('celestial-poster');
