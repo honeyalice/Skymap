@@ -34,7 +34,7 @@ var config = {
     },
     stars: {
       show: true,
-      limit: 6,
+      limit: 5,
       names: false,
       colors: false,
       style: { fill: "#ffffff", opacity: 0.9 },
@@ -242,7 +242,18 @@ function updateStarSize() {
 starSizeSelect.addEventListener('change', updateStarSize);
 
 
-  
+  // Get a reference to the star size dropdown
+const starLimit = document.getElementById('star-limit');
+
+// Function to update the star size
+function updateStarLimit() {
+  const selectedSize = starLimit.value;
+  config.stars.limit = parseInt(selectedSize);
+  Celestial.apply(config);
+}
+
+// Add an event listener to the star size dropdown
+starLimit.addEventListener('input', updateStarLimit);
 
 
 // Get references to the new input fields
